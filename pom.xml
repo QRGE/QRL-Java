@@ -17,6 +17,9 @@
         <module>JavaBean</module>
         <module>OfficeAutomation</module>
         <module>IOStream</module>
+        <module>Logs</module>
+        <module>Exception</module>
+        <module>JavaBasic</module>
     </modules>
 
     <properties>

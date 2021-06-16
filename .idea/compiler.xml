@@ -8,12 +8,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JVM" />
+        <module name="JavaBasic" />
         <module name="Utils" />
         <module name="JavaBean" />
+        <module name="Logback" />
         <module name="IOStream" />
         <module name="OfficeAutomation" />
         <module name="Algorithm" />
         <module name="Annotation" />
+        <module name="Exception" />
       </profile>
     </annotationProcessing>
   </component>
