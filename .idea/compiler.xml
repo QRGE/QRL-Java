@@ -10,13 +10,15 @@
         <module name="JVM" />
         <module name="JavaBasic" />
         <module name="Utils" />
+        <module name="IO" />
         <module name="JavaBean" />
         <module name="Logback" />
-        <module name="IOStream" />
+        <module name="DataStructure" />
+        <module name="leetcode" />
         <module name="OfficeAutomation" />
         <module name="Algorithm" />
-        <module name="Annotation" />
         <module name="Exception" />
+        <module name="Annotation" />
       </profile>
     </annotationProcessing>
   </component>

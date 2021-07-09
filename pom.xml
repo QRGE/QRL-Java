@@ -16,10 +16,12 @@
         <module>Utils</module>
         <module>JavaBean</module>
         <module>OfficeAutomation</module>
-        <module>IOStream</module>
+        <module>IO</module>
         <module>Logs</module>
         <module>Exception</module>
         <module>JavaBasic</module>
+        <module>DataStructure</module>
+        <module>leetcode</module>
     </modules>
 
     <properties>
