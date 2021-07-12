@@ -38,6 +38,22 @@ public class BinaryTree<E> implements BinaryTreeInfo {
         public boolean hasTwoChildNode() {
             return left != null && right != null;
         }
+
+        /**
+         * 判断自己是否为父节点的左子树
+         * @return 判断结果
+         */
+        public boolean ifLeftChild(){
+            return parent != null && parent.left == this;
+        }
+
+        /**
+         * 判断自己是否为父节点的右子节点
+         * @return 判断结果
+         */
+        public boolean ifRightChild(){
+            return parent != null && parent.right == this;
+        }
     }
 
     public abstract static class Visitor<E> {
@@ -213,20 +229,8 @@ public class BinaryTree<E> implements BinaryTreeInfo {
         return true;
     }
 
-    @Override
-    public String toString(){
-        StringBuilder builder = new StringBuilder();
-        toString(root, builder, "");
-        return builder.toString();
-    }
-
-    private void toString(Node<E> node, StringBuilder builder, String pre){
-        if (node == null) {
-            return;
-        }
-        builder.append(pre).append(node.element).append("\n");
-        toString(node.left, builder, pre + "[L]");
-        toString(node.right, builder, pre + "[R]");
+    protected Node<E> createNode(E element, Node<E> parent){
+        return new Node<>(element, parent);
     }
 
     @Override

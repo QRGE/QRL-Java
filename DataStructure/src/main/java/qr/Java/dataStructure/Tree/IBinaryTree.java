@@ -1,7 +1,7 @@
 package qr.Java.dataStructure.Tree;
 
 /**
- * Binary Tree 特点:
+ * Binary ITree 特点:
  * <li>每个节点的度最大为2</li>
  * <li>左子树和右子树是有具体的,即使某个节点只有一颗子树, 也要区分左右子树</li>
  * <li>非空二叉树的第i层, 最多有2^(i-1)个节点</li>

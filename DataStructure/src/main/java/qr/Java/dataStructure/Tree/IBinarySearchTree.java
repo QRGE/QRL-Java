@@ -1,7 +1,7 @@
 package qr.Java.dataStructure.Tree;
 
 /**
- * Binary Search Tree: 二叉搜索树, 又称二叉查找树, 二叉排序树, 简称BST <br/>
+ * Binary Search ITree: 二叉搜索树, 又称二叉查找树, 二叉排序树, 简称BST <br/>
  * BST特点: <br/>
  * - 任意一个节点的值都大于其左子树所有节点的值 <br/>
  * - 任意一个节点的值都小于其右子树所有节点的值 <br/>

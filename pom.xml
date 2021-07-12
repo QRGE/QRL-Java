@@ -14,14 +14,13 @@
         <module>Annotation</module>
         <module>Thread</module>
         <module>Utils</module>
-        <module>JavaBean</module>
         <module>OfficeAutomation</module>
         <module>IO</module>
         <module>Logs</module>
         <module>Exception</module>
         <module>JavaBasic</module>
         <module>DataStructure</module>
-        <module>leetcode</module>
+        <module>ProblemSolving</module>
     </modules>
 
     <properties>

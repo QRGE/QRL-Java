@@ -9,6 +9,9 @@ import java.util.Comparator;
 @SuppressWarnings("unchecked")
 public class BinarySearchTree<E> extends BinaryTree<E> implements IBinarySearchTree<E>{
 
+    /**
+     * 比较器, 用于设定树节点元素的比较规则
+     */
     private final Comparator<E> comparator;
 
     public BinarySearchTree(Comparator<E> comparator) {
@@ -23,16 +26,17 @@ public class BinarySearchTree<E> extends BinaryTree<E> implements IBinarySearchT
     public void add(E element) {
         elementNotNullCheck(element);
         if (root == null) {
-            root = new Node<>(element, null);
+            root = createNode(element, null);
             size++;
+            afterAdd(root);
             return;
         }
         Node<E> node = root;
-        Node<E> parent = null;
+        Node<E> pNode = null;
         int compareResult = 0;
         while (node != null) {
             compareResult = compare(element, node.element);
-            parent = node;
+            pNode = node;
             if (compareResult > 0){
                 node = node.right;
             }else if(compareResult < 0){
@@ -45,13 +49,14 @@ public class BinarySearchTree<E> extends BinaryTree<E> implements IBinarySearchT
                 return;
             }
         }
-        Node<E> addNode = new Node<>(element, parent);
+        Node<E> addNode = createNode(element, pNode);
         if (compareResult > 0){
-            parent.right = addNode;
+            pNode.right = addNode;
         } else {
-            parent.left = addNode;
+            pNode.left = addNode;
         }
         size++;
+        afterAdd(addNode);
     }
 
     /**
@@ -76,7 +81,7 @@ public class BinarySearchTree<E> extends BinaryTree<E> implements IBinarySearchT
         }
         // 删除度为1或0的节点的情况
         Node<E> replaceNode = node.left != null ? node.left : node.right;
-        // 度为1的节点
+        // 度为1的节点则删除自己(父节点指向自己的子节点)
         if (replaceNode != null) {
             replaceNode.parent = node.parent;
             // 根节点的情况
@@ -135,6 +140,10 @@ public class BinarySearchTree<E> extends BinaryTree<E> implements IBinarySearchT
         return node(elements) != null;
     }
 
+    /**
+     * 判断某个元素是否为空
+     * @param element 待判断是否为空的元素
+     */
     private void elementNotNullCheck(E element) {
         if (element == null){
             throw new IllegalArgumentException("element must not be null");
@@ -154,4 +163,6 @@ public class BinarySearchTree<E> extends BinaryTree<E> implements IBinarySearchT
         // 如果没有传入比较器, 则强制转换成Comparable类型惊醒比较, 无法比较则报错
         return ((Comparable<E>)e1).compareTo(e2);
     }
+
+    protected void afterAdd(Node<E> node){}
 }
