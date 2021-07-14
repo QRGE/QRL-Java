@@ -1,6 +1,6 @@
 package qr.JVM.Optimize;
 
-import qr.Java.Utils.Thread.TSTools;
+import qr.basic.util.thread.ThreadTool;
 
 /**
  * 栈上分配测试
@@ -18,7 +18,7 @@ public class StackAllocation {
         System.out.println("Speed Time: " + (end - start));
 
         // 暂停用于查看内存情况
-        TSTools.sleepS(300);
+        ThreadTool.sleepS(300);
     }
 
     private static void alloc(Integer id) {

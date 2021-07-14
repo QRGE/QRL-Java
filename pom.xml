@@ -12,7 +12,7 @@
         <module>JVM</module>
         <module>Algorithm</module>
         <module>Annotation</module>
-        <module>Thread</module>
+        <module>JUC</module>
         <module>Utils</module>
         <module>OfficeAutomation</module>
         <module>IO</module>

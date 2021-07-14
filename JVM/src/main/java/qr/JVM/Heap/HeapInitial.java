@@ -1,6 +1,6 @@
 package qr.JVM.Heap;
 
-import qr.Java.Utils.Thread.TSTools;
+import qr.basic.util.thread.ThreadTool;
 
 /**
  * 在Edit Configuration中 add VMOption 可以设置通过-Xms和-Xmx设置堆的初始内存和最大内存
@@ -18,6 +18,6 @@ public class HeapInitial {
         System.out.println("-Xms : " + initialMemory + "M");
         System.out.println("-Xmx : " + maxMemory + "M");
 
-        TSTools.sleepS(1000);
+        ThreadTool.sleepS(1000);
     }
 }

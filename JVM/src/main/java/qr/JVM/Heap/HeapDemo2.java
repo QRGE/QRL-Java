@@ -1,6 +1,6 @@
 package qr.JVM.Heap;
 
-import qr.Java.Utils.Thread.TSTools;
+import qr.basic.util.thread.ThreadTool;
 
 /**
  * -Xms20m -Xmx20m
@@ -15,6 +15,6 @@ public class HeapDemo2 {
         }
         System.out.println("End...");
 
-        TSTools.sleepMs(1000);
+        ThreadTool.sleepMs(1000);
     }
 }

@@ -9,17 +9,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="JVM" />
         <module name="JavaBasic" />
+        <module name="ProblemSolving" />
+        <module name="Utils" />
         <module name="IO" />
+        <module name="Logback" />
         <module name="DataStructure" />
-        <module name="leetcode" />
+        <module name="OfficeAutomation" />
         <module name="Algorithm" />
         <module name="Exception" />
         <module name="Annotation" />
-        <module name="ProblemSolving" />
-        <module name="Utils" />
-        <module name="Logback" />
-        <module name="IOStream" />
-        <module name="OfficeAutomation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

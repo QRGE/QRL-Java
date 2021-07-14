@@ -1,6 +1,6 @@
 package qr.JVM.Heap.Exception;
 
-import qr.Java.Utils.Thread.TSTools;
+import qr.basic.util.thread.ThreadTool;
 
 import java.util.ArrayList;
 
@@ -14,7 +14,7 @@ public class OOMDemo {
         ArrayList<Student> students = new ArrayList<>();
         // 通过不断创建新的对象撑爆堆内存, 当Old区不能存放新的对象时, 就会产生OOM异常
         for (int i = 0; i < Integer.MAX_VALUE; i++) {
-            TSTools.sleepMs(1);
+            ThreadTool.sleepMs(1);
             students.add(new Student(i));
         }
         System.out.println(students);

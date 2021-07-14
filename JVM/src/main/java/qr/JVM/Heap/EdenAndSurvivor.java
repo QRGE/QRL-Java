@@ -1,6 +1,6 @@
 package qr.JVM.Heap;
 
-import qr.Java.Utils.Thread.TSTools;
+import qr.basic.util.thread.ThreadTool;
 
 import java.util.ArrayList;
 
@@ -16,6 +16,6 @@ public class EdenAndSurvivor {
     public static void main(String[] args) {
         System.out.println("Just a Demo...");
         new ArrayList<>();
-        TSTools.sleepS(1000);
+        ThreadTool.sleepS(1000);
     }
 }
