@@ -1,2 +1,2 @@
 # QR-Learning
-QR is still learning
+一些学习笔记
