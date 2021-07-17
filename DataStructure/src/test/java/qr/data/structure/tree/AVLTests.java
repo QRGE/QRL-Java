@@ -1,6 +1,6 @@
+package qr.data.structure.tree;
+
 import org.junit.Test;
-import qr.data.structure.tree.AvlTree;
-import qr.data.structure.tree.BinarySearchTree;
 import qr.data.structure.tree.printer.BinaryTrees;
 
 /**

@@ -153,6 +153,28 @@ public class BinaryTree<E> implements BinaryTreeInfo {
         public boolean isRightChild(){
             return parent != null && parent.right == this;
         }
+
+        /**
+         * 返回某个节点的兄弟节点
+         * @return 兄弟节点
+         */
+        public Node<E> sibling(){
+            if (isLeftChild()){
+                return parent.right;
+            }
+            if (isRightChild()){
+                return parent.left;
+            }
+            return null;
+        }
+
+        /**
+         * 返回叔父节点, 即父节点的兄弟节点
+         * @return 叔父节点
+         */
+        public Node<E> uncle(){
+            return parent.sibling();
+        }
     }
 
     public abstract static class Visitor<E> {
@@ -349,6 +371,6 @@ public class BinaryTree<E> implements BinaryTreeInfo {
 
     @Override
     public Object string(Object node) {
-        return ((Node<E>)node).element;
+        return node;
     }
 }

@@ -1,8 +1,9 @@
+package qr.data.structure.tree;
+
 import org.junit.jupiter.api.Test;
-import qr.data.structure.tree.BinarySearchTree;
-import qr.data.structure.tree.printer.BinaryTrees;
 import qr.data.structure.domain.Person;
 import qr.data.structure.domain.PersonComparator;
+import qr.data.structure.tree.printer.BinaryTrees;
 
 /**
  * BST的一些测试

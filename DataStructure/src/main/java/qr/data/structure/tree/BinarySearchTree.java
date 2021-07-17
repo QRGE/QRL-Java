@@ -87,6 +87,7 @@ public class BinarySearchTree<E> extends BinaryTree<E>{
         Node<E> replaceNode = node.left != null ? node.left : node.right;
         // 度为1的节点则删除自己(父节点指向自己的子节点)
         if (replaceNode != null) {
+            // 设置替换节点的父节点
             replaceNode.parent = node.parent;
             // 根节点的情况
             if (node.parent == null) {

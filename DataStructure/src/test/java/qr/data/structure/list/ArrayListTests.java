@@ -1,3 +1,5 @@
+package qr.data.structure.list;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -6,7 +8,7 @@ import java.util.ArrayList;
  * @Author: QR
  * @Date: 2021/7/4-14:57
  */
-public class ListTests {
+public class ArrayListTests {
 
     @Test
     public void ArrayListTest(){
