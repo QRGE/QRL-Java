@@ -1,6 +1,7 @@
 package qr.data.structure.tree;
 
 import org.junit.Test;
+import qr.basic.util.console.ConsoleUtils;
 import qr.data.structure.tree.printer.BinaryTrees;
 
 /**
@@ -8,17 +9,6 @@ import qr.data.structure.tree.printer.BinaryTrees;
  * @Date: 2021/7/17-13:36
  */
 public class RedBlackTreeTests {
-
-    private final static RedBlackTree<Integer> rbt_nums = new RedBlackTree<>();
-    private final static Integer[] nums = new Integer[] {
-            85, 19, 69, 3, 7, 99, 95, 2, 1, 77, 51, 58, 11, 21, 15, 93, 57, 22, 2, 66
-    };
-
-    static {
-        for (Integer num : nums) {
-            rbt_nums.add(num);
-        }
-    }
 
     @Test
     public void addTest(){
@@ -30,5 +20,24 @@ public class RedBlackTreeTests {
             rbTree.add(num);
         }
         BinaryTrees.println(rbTree);
+    }
+
+    @Test
+    public void removeTest(){
+        Integer[] nums = new Integer[] {
+                55, 87, 56, 74, 96, 22, 62, 20, 70, 68, 90, 50
+        };
+        RedBlackTree<Integer> rbTree = new RedBlackTree<>();
+        for (Integer num : nums) {
+            rbTree.add(num);
+        }
+        BinaryTrees.println(rbTree);
+        ConsoleUtils.separater();
+        for (Integer num : nums) {
+            System.out.println("remove: " + num);
+            rbTree.remove(num);
+            BinaryTrees.println(rbTree);
+            ConsoleUtils.separater();
+        }
     }
 }

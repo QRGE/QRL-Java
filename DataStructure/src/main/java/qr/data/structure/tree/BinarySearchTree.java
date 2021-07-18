@@ -12,7 +12,7 @@ import java.util.Comparator;
  * @Author: QR
  * @Date: 2021/7/5-14:18
  */
-@SuppressWarnings("unchecked")
+@SuppressWarnings({"unchecked", "unused", "UnusedReturnValue"})
 public class BinarySearchTree<E> extends BinaryTree<E>{
 
     /**
@@ -98,7 +98,7 @@ public class BinarySearchTree<E> extends BinaryTree<E>{
                 node.parent.right = replaceNode;
             }
             // 删除节点后的处理, 可以用于恢复平衡
-            afterRemove(node);
+            afterRemove(replaceNode);
         }
         // 叶子节点&&根节点
         else if (node.parent == null) {

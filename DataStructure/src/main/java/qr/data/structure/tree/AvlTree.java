@@ -6,6 +6,7 @@ import java.util.Comparator;
  * @Author: QR
  * @Date: 2021/7/12-19:05
  */
+@SuppressWarnings({"unused", "UnusedReturnValue"})
 public class AvlTree<E> extends BalanceBinarySearchTree<E> {
 
     private static class AvlNode<E> extends BinarySearchTree.Node<E>{
@@ -111,22 +112,19 @@ public class AvlTree<E> extends BalanceBinarySearchTree<E> {
         Node<E> parent = ((AvlNode<E>)grand).tallerChild();
         Node<E> node = ((AvlNode<E>)parent).tallerChild();
         if (parent.isLeftChild()){
-            //LL
-            if (node.isLeftChild()){
-                rotateRight(grand);
-            }
-            else { // LR
+            // LR
+            if (!node.isLeftChild()) {
                 rotateLeft(parent);
-                rotateRight(grand);
             }
+            //LL
+            rotateRight(grand);
         } else {
             // RL
             if (node.isLeftChild()) {
                 rotateRight(parent);
-                rotateLeft(grand);
-            } else { //RR
-                rotateLeft(grand);
             }
+            // RR
+            rotateLeft(grand);
         }
     }
 
