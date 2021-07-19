@@ -2,7 +2,10 @@ package qr.data.structure.list.LinkedList;
 
 import qr.data.structure.list.AbstractList;
 
-// java.util.LinkedList<E> java官方的链表是利用双向链表实现的
+/**
+ * java.util.LinkedList 是利用双向链表实现的
+ * @author QR
+ */
 public class DoubleLinkedList<E> extends AbstractList<E> {
 
     private Node<E> first;
@@ -15,7 +18,8 @@ public class DoubleLinkedList<E> extends AbstractList<E> {
      */
     @Override
     public E get(int index) {
-        return node(index).element; // 通过node获取对应的节点后再获取对应的element
+        // 通过node获取对应的节点后再获取对应的element
+        return node(index).element;
     }
 
     /**
@@ -26,10 +30,13 @@ public class DoubleLinkedList<E> extends AbstractList<E> {
      */
     @Override
     public E set(int index, E element) {
-        Node<E> node = node(index);   // 获取到index位置的节点
-        E oldElement = node.element;  // 获取原来节点的数据OldElement
-        node.element = element;       // 替换掉原来节点的数据element -> OldElement
-        return oldElement;            // 返回原来的数据OleElement
+        // 获取到index位置的节点
+        Node<E> node = node(index);
+        // 获取原来节点的数据OldElement
+        E oldElement = node.element;
+        // 替换掉原来节点的数据element -> OldElement
+        node.element = element;
+        return oldElement;
     }
 
     /**
@@ -39,32 +46,30 @@ public class DoubleLinkedList<E> extends AbstractList<E> {
      */
     @Override
     public void add(int index, E element) {
-        rangeCheckForAdd(index);    // 检查index是否超出范围
+        rangeCheckForAdd(index);
+        // 再链表末尾添加元素
         if (index == size){
-            Node<E> preNode = last;                                     // 直接在末尾添加newNode, 运来的末尾节点变成了newNode的prev
-            Node<E> newNode = new Node<>(element, null, preNode);       // 创建newNode
-            last = newNode;                                             // last指向newNode
+            Node<E> preNode = last;
+            Node<E> newNode = new Node<>(element, null, preNode);
+            last = newNode;
+            // 添加第一个元素
             if (preNode == null){
                 first = newNode;
             }else {
-                preNode.next = newNode;                                     // preNode的next需要指向newNode
+                preNode.next = newNode;
             }
-
-
-
         } else {
-            Node<E> nextNode = node(index);                             // 在某个位置加入一个新的节点后, 原来的节点被挤到后面, 故取名nextNode
-            Node<E> prevNode = nextNode.prev;                           // 原来节点的前一个节点依然是newNode的前一个节点, 故取名preNode
-            Node<E> newNode = new Node<>(element, nextNode, prevNode);  // 创建待添加的新节点newNode, newNode的next指向nextNode, prev指向prevNode
+            Node<E> nextNode = node(index);
+            Node<E> prevNode = nextNode.prev;
+            Node<E> newNode = new Node<>(element, nextNode, prevNode);
             if (prevNode == null) {
-                first = newNode;                                        // 如果在index=0处添加节点, first应该指向newNode
+                first = newNode;
             }else {
-                prevNode.next = newNode;                                // prevNode的next需要指向newNode
+                prevNode.next = newNode;
             }
-
-            nextNode.prev = newNode;                                    // nextNode的prev也需要指向newNode
+            nextNode.prev = newNode;
         }
-        size++;                      // 添加元素后节点个数加一
+        size++;
     }
 
     /**
@@ -74,23 +79,25 @@ public class DoubleLinkedList<E> extends AbstractList<E> {
      */
     @Override
     public E remove(int index) {
-        rangeCheck(index);                    // 检查删除index的范围
-        Node<E> deletedNode = node(index);    // 被删除的节点
-        Node<E> prevNode = deletedNode.prev;  // 获取被删除的头节点的前一个节点prevNode
-        Node<E> nextNode = deletedNode.next;  // 获取被删除的头节点的有一个节点nextNode
-        if (prevNode == null){                // 删除头节点的情况
-            first = nextNode;                 // nextNode变成了新的first
-        }else {
-            prevNode.next = nextNode;         // 其他情况
+        rangeCheck(index);
+        Node<E> deletedNode = node(index);
+        Node<E> prevNode = deletedNode.prev;
+        Node<E> nextNode = deletedNode.next;
+        // 删除头节点, nextNode 变成了新的 first
+        if (prevNode == null){
+            first = nextNode;
+        }else { // 正常情况, prevNode 的 next 指向了 nextNode
+            prevNode.next = nextNode;
         }
-        if (nextNode == null){                // 删除尾节点的情况
-            last = prevNode;                  // preNode成为的新的last节点
-        }else {
-            nextNode.prev = prevNode;         // 其他情况
+        // 删除尾节点, preNode 成为的新的last节点
+        if (nextNode == null){
+            last = prevNode;
+        }else { // 正常情况, nextNode 的 prev 指向 preNode
+            nextNode.prev = prevNode;
         }
-        E oldElement = deletedNode.element;   // 获取被删除节点的element, 用于返回
-        size--;                               // 删除数据一个数据后size-1
-        return oldElement;                    // 返回被删除的节点的数据element
+        E oldElement = deletedNode.element;
+        size--;
+        return oldElement;
     }
 
     /**
@@ -100,15 +107,19 @@ public class DoubleLinkedList<E> extends AbstractList<E> {
      */
     @Override
     public int indexOf(E element) {
-        Node<E> node = first;                               // 获取first的节点用于遍历
+        Node<E> node = first;
         if (element == null){
             for (int i = 0; i < size; i++) {
-                if (node.element == null) return i;
+                if (node.element == null) {
+                    return i;
+                }
                 node = node.next;
             }
         } else {
             for (int i = 0; i < size; i++) {
-                if (node.element.equals(element)) return i;
+                if (node.element.equals(element)) {
+                    return i;
+                }
                 node = node.next;
             }
         }
@@ -120,12 +131,11 @@ public class DoubleLinkedList<E> extends AbstractList<E> {
         remove(indexOf(element));
     }
 
-    // 清空节点
     @Override
     public void clear() {
-        size = 0;      // 节点数设置成0
-        first = null;  // first设置成null, 则原来存储在first引用的node会因为没有引用而被回收(具体看jvm相关内容吧,暂时还没学2021/3/21)
-        last = null;   // null同first, 双向指针的话设置first和last设置为0后, 剩下的环形节点也会被回收(不是gc root对象, 暂时不懂2021/4/1)
+        size = 0;
+        first = null;
+        last = null;
     }
 
     /**
@@ -139,7 +149,8 @@ public class DoubleLinkedList<E> extends AbstractList<E> {
         if (index < (size >> 1)){
             node = first;
             for (int i = 0; i < index; i++) {
-                node = node.next; // 刚开始写成first.next了,纯sb(⊙﹏⊙)
+                // 刚开始写成first.next了,纯sb(⊙﹏⊙)
+                node = node.next;
             }
         } else {
             node = last;
@@ -150,7 +161,6 @@ public class DoubleLinkedList<E> extends AbstractList<E> {
         return node;
     }
 
-    // 节点对象
     private static class Node<E> {
         E element;
         Node<E> prev;
@@ -166,13 +176,13 @@ public class DoubleLinkedList<E> extends AbstractList<E> {
         public String toString(){
             StringBuilder builder = new StringBuilder();
             if (prev != null){
-                builder.append("( " + prev.element);
+                builder.append("( ").append(prev.element);
             }else {
                 builder.append("( Null");
             }
             builder.append("_").append(element).append("_");
             if (next != null){
-                builder.append(next.element + " )");
+                builder.append(next.element).append(" )");
             }else {
                 builder.append("Null )");
             }

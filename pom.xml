@@ -12,13 +12,13 @@
         <module>JVM</module>
         <module>Algorithm</module>
         <module>Annotation</module>
+        <module>Basic</module>
         <module>JUC</module>
         <module>Utils</module>
         <module>OfficeAutomation</module>
         <module>IO</module>
         <module>Logs</module>
         <module>Exception</module>
-        <module>JavaBasic</module>
         <module>DataStructure</module>
         <module>ProblemSolving</module>
     </modules>
