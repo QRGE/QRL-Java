@@ -9,7 +9,7 @@ import java.util.Queue;
  * @Author: QR
  * @Date: 2021/7/9-14:49
  */
-@SuppressWarnings("unchecked")
+@SuppressWarnings({"unchecked", "unused"})
 public class BinaryTree<E> implements BinaryTreeInfo {
 
     protected int size;
@@ -277,7 +277,6 @@ public class BinaryTree<E> implements BinaryTreeInfo {
             // 空树为0层
             return 0;
         }
-
         int height = 0;
         // levelSize用于记录每层节点的个数
         int levelSize = 1;

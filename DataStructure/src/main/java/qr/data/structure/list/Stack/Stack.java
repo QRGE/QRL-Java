@@ -1,6 +1,6 @@
 package qr.data.structure.list.Stack;
 
-import qr.data.structure.list.DynamicList.DynamicList;
+import qr.data.structure.list.ArrayList.ArrayList;
 
 /**
  * 利用动态链表实现Stack, 借助动态链表的add和remove方法
@@ -9,7 +9,7 @@ import qr.data.structure.list.DynamicList.DynamicList;
  */
 public class Stack<E>{
 
-    private final DynamicList<E> list = new DynamicList<>();
+    private final ArrayList<E> list = new ArrayList<>();
 
     public void push(E element){
         list.add(element);

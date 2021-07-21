@@ -1,4 +1,4 @@
-package qr.basic.annotation;
+package qr.annotation;
 
 import java.lang.annotation.*;
 

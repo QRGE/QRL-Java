@@ -27,7 +27,7 @@ public interface Map<K, V> {
     /**
      * 添加键值对 K : V
      * @param key 添加的键
-     * @param value 添加的值
+     * @param value 如果Map中 K : V1 已经存在, 则返回原来的 V1, 否则返回null
      * @return 添加的值
      */
     V put(K key, V value);
@@ -67,7 +67,7 @@ public interface Map<K, V> {
     void traversal(Visitor<K, V> visitor);
 
     abstract class Visitor<K, V> {
-        boolean stop;
+        boolean stop = true;
 
         /**
          * 遍历Map中的键值对时操作

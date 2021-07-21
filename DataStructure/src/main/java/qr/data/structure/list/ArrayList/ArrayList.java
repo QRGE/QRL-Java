@@ -1,19 +1,21 @@
-package qr.data.structure.list.DynamicList;
+package qr.data.structure.list.ArrayList;
 
 import qr.data.structure.list.AbstractList;
 
 import java.util.Arrays;
-
-// 手写一个动态数组,理解一下java.util.ArrayList的组成
-// 复杂度震荡: 如果扩容和缩容两者的时机(临界条件)相同,那么就会造成复杂度震荡, 假设你在临界条件出不断地扩容和缩容, 复杂度会一直处于O(n)
+import java.util.Objects;
 
 /**
+ * 手写一个动态数组,理解 java.util.ArrayList 的组成
  * 可以用循环数组进行优化, 利用一个first存放第一个元素的索引位置,
- * 假如现在有一个arrayList长度为5, 且所有的位置都有数据, 当发生首元素删除时可以利用first指向elements的索引1, 就可以避免数组的复制操作
+ * 假如现在有一个arrayList长度为5, 且所有的位置都有数据, 删除 index=0 的元素时可以利用一个成员变量 first 指向 index=1 的元素,
+ * 就可以避免数组的复制操作
+ * 复杂度震荡: 如果扩容和缩容两者的时机(临界条件)相同,那么就会造成复杂度震荡
+ *      即在临界条件出不断地扩容和缩容, 复杂度会一直处于O(n)
  * @author QR
  */
 @SuppressWarnings("unchecked")
-public class DynamicList<E> extends AbstractList<E> {
+public class ArrayList<E> extends AbstractList<E> {
 
     /**
      * ArrayList用一个泛型数组存储数据
@@ -29,7 +31,7 @@ public class DynamicList<E> extends AbstractList<E> {
      * 即 elements 的容量总是 >= DEFAULT_CAPACITY
      * @param capacity 指定elements的容量
      */
-    public DynamicList(int capacity){
+    public ArrayList(int capacity){
         capacity = (capacity <= 0) ? DEFAULT_CAPACITY : capacity;
         elements = (E[]) new Object[capacity];
     }
@@ -37,7 +39,7 @@ public class DynamicList<E> extends AbstractList<E> {
     /**
      * 直接new对象则 elements 的容量为默认容量
      */
-    public DynamicList(){
+    public ArrayList(){
         this(DEFAULT_CAPACITY);
     }
 
@@ -120,18 +122,10 @@ public class DynamicList<E> extends AbstractList<E> {
      */
     @Override
     public int indexOf(E element) {
-        // 空指针异常的处理
-        if (element == null){
-            for (int i = 0; i < size; i++) {
-                if (elements[i] == null) {
-                    return i;
-                }
-            }
-        }else {
-            for (int i = 0; i < size; i++) {
-                if (elements[i].equals(element)) {
-                    return i;
-                }
+        for (int i = 0; i < size; i++) {
+            // Objects.equals包括了null的判断
+            if (Objects.equals(elements[i], element)) {
+                return i;
             }
         }
         return ELEMENT_NOT_FOUND;
