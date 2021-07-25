@@ -1,5 +1,6 @@
 package qr.leetcode.list;
 
+@SuppressWarnings("all")
 public class ListNode {
 
     public int val;

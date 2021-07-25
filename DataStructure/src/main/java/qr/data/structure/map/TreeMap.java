@@ -133,9 +133,6 @@ public class TreeMap<K, V> implements Map<K, V>{
             }else if(compareResult < 0){
                 node = node.left;
             }else {
-                // 如果传入的自定义对象, 确保每次传入对象的信息都为element
-                // 当设置自定义对象的比较方式时, 通常只会选取某个域的值作为比较, 为保证接收到element的其他域的值, 每次将当前node的element替换
-                // 按需决定
                 V oldValue = node.value;
                 node.key = key;
                 node.value = value;
