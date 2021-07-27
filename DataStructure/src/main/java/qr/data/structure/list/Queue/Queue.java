@@ -10,7 +10,9 @@ import qr.data.structure.list.LinkedList.DoubleLinkedList;
  * front ... rear
  *
  * Java.util.LinkedList是Java官方提供的队列的实现类
+ * @author QR
  */
+@SuppressWarnings("ALL")
 public class Queue<E>{
 
     private final DoubleLinkedList<E> list = new DoubleLinkedList<>();

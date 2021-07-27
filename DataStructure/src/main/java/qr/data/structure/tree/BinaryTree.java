@@ -4,8 +4,10 @@ import qr.data.structure.tree.printer.BinaryTreeInfo;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
+ * 二叉树
  * @Author: QR
  * @Date: 2021/7/9-14:49
  */
@@ -24,16 +26,59 @@ public class BinaryTree<E> implements BinaryTreeInfo {
         if (visitor == null){
             return;
         }
-        preorderTraversal(root, visitor);
+        preorderTraversalByRecursion(root, visitor);
     }
 
-    private void preorderTraversal(Node<E> node, Visitor<E> visitor) {
+    private void preorderTraversalByRecursion(Node<E> node, Visitor<E> visitor) {
         if (node == null || !visitor.result){
             return;
         }
         visitor.result = visitor.visit(node.element);
-        preorderTraversal(node.left, visitor);
-        preorderTraversal(node.left, visitor);
+        preorderTraversalByRecursion(node.left, visitor);
+        preorderTraversalByRecursion(node.left, visitor);
+    }
+
+    private void preorderTraversalByIteration(Node<E> node, Visitor<E> visitor){
+        if (node == null || visitor == null) {
+            return;
+        }
+        Stack<Node<E>> stack = new Stack<>();
+        while (true){
+            if (node != null){
+                if (!visitor.visit(node.element)){
+                    return;
+                }
+                if (node.right != null) {
+                    stack.push(node.right);
+                }
+                node = node.left;
+            }else if (stack.isEmpty()){
+                return;
+            }else {
+                node = stack.pop();
+            }
+        }
+    }
+
+    private void preorderTraversalByIteration2(Node<E> node, Visitor<E> visitor){
+        if (visitor == null || root == null) {
+            return;
+        }
+        Stack<Node<E>> stack = new Stack<>();
+        stack.push(node);
+        while (!stack.isEmpty()){
+            node = stack.pop();
+            if (!visitor.visit(node.element)){
+                return;
+            }
+            // 先 右子节点入栈 再 左子节点入栈, 每次出栈都是 左子节点先执行 visit
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+        }
     }
 
     /**
@@ -44,19 +89,41 @@ public class BinaryTree<E> implements BinaryTreeInfo {
         if (visitor == null) {
             return;
         }
-        inorderTraversal(root, visitor);
+        inorderTraversalByRecursion(root, visitor);
     }
 
-    private void inorderTraversal(Node<E> node, Visitor<E> visitor) {
+    private void inorderTraversalByRecursion(Node<E> node, Visitor<E> visitor) {
         if (node == null || !visitor.result) {
             return;
         }
-        inorderTraversal(node.left, visitor);
+        inorderTraversalByRecursion(node.left, visitor);
         if (!visitor.result){
             return;
         }
         visitor.result = visitor.visit(node.element);
-        inorderTraversal(node.right, visitor);
+        inorderTraversalByRecursion(node.right, visitor);
+    }
+
+    private void inorderTraversalByIteration(Node<E> node, Visitor<E> visitor){
+        if(node == null || !visitor.result){
+            return;
+        }
+        Stack<Node<E>> stack = new Stack<>();
+        while (true){
+            if (node != null) {
+                stack.push(node);
+                node = node.left;
+            }else if (stack.isEmpty()){
+                return;
+            }else {
+                node = stack.pop();
+                if (!visitor.visit(node.element)){
+                    break;
+                }
+                // 循环的开头有非空判断
+                node = node.right;
+            }
+        }
     }
 
     /**
@@ -67,20 +134,49 @@ public class BinaryTree<E> implements BinaryTreeInfo {
         if (visitor == null) {
             return;
         }
-        postorderTraversal(root, visitor);
+        postorderTraversalByRecursion(root, visitor);
     }
 
-    private void postorderTraversal(Node<E> node, Visitor<E> visitor) {
+    private void postorderTraversalByRecursion(Node<E> node, Visitor<E> visitor) {
         if (node == null || !visitor.result){
             return;
         }
-        postorderTraversal(node.left, visitor);
-        postorderTraversal(node.right, visitor);
+        postorderTraversalByRecursion(node.left, visitor);
+        postorderTraversalByRecursion(node.right, visitor);
         if (!visitor.result) {
             return;
         }
         visitor.visit(node.element);
     }
+
+    private void postorderTraversalByIteration(Node<E> node, Visitor<E> visitor){
+        if (visitor == null || node == null) {
+            return;
+        }
+        Stack<Node<E>> stack = new Stack<>();
+        stack.push(node);
+        Node<E> prev = null;
+        while (!stack.isEmpty()) {
+            Node<E> top = stack.peek();
+            // prev !=null && prev.parent == top 是让不是子节点触发visit()
+            if (top.isLeaf() || (prev != null && prev.parent == top)){
+                prev = stack.pop();
+                if (!visitor.visit(prev.element)){
+                    return;
+                }
+            }else {
+                if (top.right != null) {
+                    stack.push(top.right);
+                }
+                if (top.left != null) {
+                    stack.push(top.left);
+                }
+            }
+        }
+    }
+
+
+
 
     /**
      * 层序遍历

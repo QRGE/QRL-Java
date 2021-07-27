@@ -8,9 +8,8 @@ package qr.data.structure.practice.tree;
  * - n为偶数 时, n1 = 1, n0 = n / 2 <br/>
  * - n为奇数 时, n1 = 0, n0 = (n+1) / 2 <br/>
  * 总结:
- * 叶子节点个数:
- * - n0=floor((n + 1) / 2) <br/>
- * - 非叶子节点个数: n1 + n2 = floor(n / 2) <br/>
+ * 叶子节点个数: n0=floor((n + 1) / 2) <br/>
+ * 非叶子节点个数: n1 + n2 = floor(n / 2) <br/>
  * @Author: QR
  * @Date: 2021/7/4-17:05
  */
