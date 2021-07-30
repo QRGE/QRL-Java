@@ -159,7 +159,8 @@ public class BinaryTree<E> implements BinaryTreeInfo {
         while (!stack.isEmpty()) {
             Node<E> top = stack.peek();
             // prev !=null && prev.parent == top 是让不是子节点触发visit()
-            if (top.isLeaf() || (prev != null && prev.parent == top)){
+            boolean notLeaf = prev != null && prev.parent == top;
+            if (top.isLeaf() || notLeaf){
                 prev = stack.pop();
                 if (!visitor.visit(prev.element)){
                     return;

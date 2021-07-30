@@ -3,7 +3,7 @@ SELECT emp_no, salary
 FROM salaries
 LIMIT 1, 1
 
--- 看讨论后完善的结果, 满足有多人的工资为第二薪水的状况
+-- 看讨论后完善的结果, 满足有多人的工资为第二薪水的状况, 可以先查出第二薪水的工资为多少再查出 salary = 第二薪水 的emp_no
 SELECT emp_no, salary
 FROM salaries
 WHERE salary = (
