@@ -1,8 +1,6 @@
 package qr.Java.Thread.Basic.CompletableFuture;
 
-import org.junit.jupiter.api.Test;
 import qr.Java.Thread.Utils.ThreadUtils;
-
 import java.util.concurrent.CompletableFuture;
 
 /**
@@ -13,7 +11,6 @@ import java.util.concurrent.CompletableFuture;
  */
 public class Demo1_CompletableFuture {
 
-    @Test
     public void thenCombineTest(){
         ThreadUtils.printTimeAndThreadInfo("A customer XiaoBai enter a restaurant");
         ThreadUtils.printTimeAndThreadInfo("XiaoBai order a fried eggs with tomato and a bowl of rice");
@@ -36,7 +33,6 @@ public class Demo1_CompletableFuture {
         ThreadUtils.printTimeAndThreadInfo("XiaoBao get " + cf1.join());
     }
 
-    @Test
     public void thenComposeTest(){
         ThreadUtils.printTimeAndThreadInfo("A customer XiaoBai enter a restaurant");
         ThreadUtils.printTimeAndThreadInfo("XiaoBai order a fried eggs with tomato and a bowl of rice");
@@ -53,7 +49,6 @@ public class Demo1_CompletableFuture {
         ThreadUtils.printTimeAndThreadInfo("XiaoBao get " + cf1.join());
     }
 
-    @Test
     public void thenApplyTest(){
         ThreadUtils.printTimeAndThreadInfo("XiaoBai is full");
         ThreadUtils.printTimeAndThreadInfo("XiaoBai ask the waiter for the bill");
@@ -71,7 +66,6 @@ public class Demo1_CompletableFuture {
     }
 
     // applyToEither可用于获得两个线程中先返回的值的线程
-    @Test
     public void applyToEitherTest(){
         ThreadUtils.printTimeAndThreadInfo("XiaoBai waits for the bus 700 or the bus 800");
         CompletableFuture<String> bus = CompletableFuture.supplyAsync(()->{

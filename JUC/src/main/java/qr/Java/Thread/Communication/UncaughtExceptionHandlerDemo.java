@@ -1,6 +1,5 @@
 package qr.Java.Thread.Communication;
 
-import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
@@ -24,7 +23,6 @@ public class UncaughtExceptionHandlerDemo {
     private static final Object LOCK = new Object();
 
     // 不在synchronized中调用wait方法会报错IllegalMonitorStateException
-    @Test
     void waitTest1(){
         String name = "ZhangSan";
         try {
@@ -35,7 +33,6 @@ public class UncaughtExceptionHandlerDemo {
     }
 
     // 在synchronized中需要用锁对象调用wait()
-    @Test
     void waitTest2() throws InterruptedException {
         String name = "ZhangSan";
         System.out.println("Work prepare...");
@@ -47,7 +44,6 @@ public class UncaughtExceptionHandlerDemo {
     }
 
     // 线程A中lockObj.wait()后, 线程B需要用同一个lockObj.notify()去唤醒对象
-    @Test
     void waitTest3() throws InterruptedException {
         Object lock = new Object();
         Thread myThread1 = new Thread(() -> {
@@ -77,7 +73,6 @@ public class UncaughtExceptionHandlerDemo {
 
     // 线程A中lockObj.wait()后会释放当前的锁对象, 然后在线程B的synchronized的同代码块运行完后才会释放lockObj
     // 即lockObj.notify()不会立刻释放lockObj
-    @Test
     void notifyTest1() throws InterruptedException {
         ArrayList<Integer> numbers = new ArrayList<>();
         Thread myThread1 = new Thread(() -> {
@@ -113,7 +108,6 @@ public class UncaughtExceptionHandlerDemo {
     }
 
     // interrupt()会中断线程的wait()等待
-    @Test
     void interruptTest() throws InterruptedException {
         Thread myThread1 = new Thread(() -> {
             synchronized (LOCK) {
@@ -135,7 +129,6 @@ public class UncaughtExceptionHandlerDemo {
     }
 
     // notifyAll()唤醒所有,
-    @Test
     void notifyAllTest() throws InterruptedException {
         Thread myThread1 = new Thread(() -> {
             synchronized (LOCK) {

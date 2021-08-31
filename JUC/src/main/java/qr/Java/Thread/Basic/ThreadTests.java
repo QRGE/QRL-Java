@@ -1,11 +1,8 @@
 package qr.Java.Thread.Basic;
 
-import org.junit.jupiter.api.Test;
-
 public class ThreadTests {
 
     // Thread.sleep()可以暂停调用此方法的线程, 测试类里似乎不能使用Thread.sleep(), 可以看MyThread的main方法
-    @Test
     void sleepTest(){
         MyThread7 myThread7 = new MyThread7();
         long startTime = System.currentTimeMillis();
@@ -16,7 +13,6 @@ public class ThreadTests {
 
     // 每一个线程都已自己的唯一Id
     // 通过getId()可以获取线程的Id
-    @Test
     void getIdTest(){
         System.out.println("ThreadName: " + Thread.currentThread().getName() + ", id: " + Thread.currentThread().getId());
         for (int i = 0; i < 5; i++) {
@@ -25,7 +21,6 @@ public class ThreadTests {
     }
 
     // Thread.yield()方法可以让当前线程放弃CPU资源
-    @Test
     void yieldTest(){
         MyThread9 myThread9 = new MyThread9();
         myThread9.start();
@@ -42,7 +37,6 @@ public class ThreadTests {
 
     // setProperty()方法可以设置线程的优先级, 优先级的取值范围为0到10依次递增
     // main线程的优先级为5, 优先级是可以继承的, 即如果在A线程中创建了B线程, 那么B线程的优先级等同于A线程的优先级, 也就是说所有在main线程中创建的线程的优先级均为5
-    @Test
     void priorityTest(){
         Thread threadA = new Thread(() -> {
             for (int i = 0; i < 100; i++) {
@@ -65,7 +59,6 @@ public class ThreadTests {
     // threadObj.isInterrupt() 查询是否有中断标记
     // interrupt()仅仅是给线程设置一个中断标记
     // 真正退出线程的可以在对应线程中run()里利用isInterrupted()方法判断是否有有中断标记,然后利用return等结束方法
-    @Test
     void interruptTest(){
         Thread myThread = new Thread(() -> {
             for (int i = 0; i < 100; i++) {
@@ -90,7 +83,6 @@ public class ThreadTests {
      *  守护线程不能单独运行, 当JVM中没有其他用户线程, 只有守护线程时,JVM会退出
      *  设置守护线程的代码应该在start()方法前
      */
-    @Test
     void DaemonTest(){
         Thread myThread = new Thread(() -> {
             for (int i = 0; i < 10000000; i++) {
@@ -120,7 +112,6 @@ public class ThreadTests {
      *                个人理解就是个有时间限制的WAITING,例如Thread.sleep(int ms), 仅休眠了n毫秒后还是会继续执行当前线程
      * TERMINATED: 终止状态, 线程结束处于终止状态
      */
-    @Test
     void stateTest() throws InterruptedException {
         Thread myThread = new Thread(() -> System.out.println("MyThread is working..."));
         System.out.println(myThread.getState());
@@ -147,7 +138,6 @@ public class ThreadTests {
      *    3):上下文切换(Context Switch),处理器执行从一个线程切换到另一个线程
      *    4):可靠性: 可能会由一个线程导致 JVM 意外终止, 其他的线程也无法执行
      */
-    @Test
     void advantageOrShortage(){
 
     }

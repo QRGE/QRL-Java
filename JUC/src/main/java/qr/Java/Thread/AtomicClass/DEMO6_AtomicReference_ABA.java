@@ -1,6 +1,6 @@
 package qr.Java.Thread.AtomicClass;
 
-import org.junit.jupiter.api.Test;
+
 
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
@@ -19,7 +19,6 @@ public class DEMO6_AtomicReference_ABA {
     // 利用标记解决ABA问题, 除了传入初始值之外还需要传入一个int类型版本号
     private static final AtomicStampedReference<String> atomicStampedReference = new AtomicStampedReference<>("Hello",0);
 
-    @Test
     void AtomicStampedReference() throws InterruptedException {
         // 创建第一个线程, 先 Hello -> NiHaoWa, 再 NiHaoWa -> Hello
         Thread thread1 = new Thread(()->{
@@ -45,7 +44,6 @@ public class DEMO6_AtomicReference_ABA {
         System.out.println(atomicStampedReference.getReference());
     }
 
-    @Test
     void AtomicReferenceDemo() throws InterruptedException {
         // 创建第一个线程, 先 Hello -> NiHaoWa, 再 NiHaoWa -> Hello
         Thread thread1 = new Thread(()->{
