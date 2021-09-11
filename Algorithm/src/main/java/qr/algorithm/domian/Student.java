@@ -2,7 +2,6 @@ package qr.algorithm.domian;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * @Author: QR
@@ -17,7 +16,7 @@ public class Student implements Comparable<Student>{
 
 
     @Override
-    public int compareTo(@NotNull Student s) {
+    public int compareTo(Student s) {
         return age - s.age;
     }
 }

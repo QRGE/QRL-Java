@@ -17,7 +17,6 @@
         <module>Utils</module>
         <module>OfficeAutomation</module>
         <module>IO</module>
-        <module>Logs</module>
         <module>Exception</module>
         <module>DataStructure</module>
         <module>ProblemSolving</module>
