@@ -1,4 +1,4 @@
-package qrl.stream.CharacterStreams;
+package qrl.stream.io.CharacterStreams;
 
 import java.io.FileWriter;
 import java.io.IOException;

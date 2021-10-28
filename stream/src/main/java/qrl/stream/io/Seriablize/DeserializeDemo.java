@@ -1,4 +1,4 @@
-package qrl.stream.Seriablize;
+package qrl.stream.io.Seriablize;
 
 import java.io.FileInputStream;
 import java.io.IOException;

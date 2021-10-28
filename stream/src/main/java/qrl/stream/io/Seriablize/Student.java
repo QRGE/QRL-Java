@@ -1,4 +1,4 @@
-package qrl.stream.Seriablize;
+package qrl.stream.io.Seriablize;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

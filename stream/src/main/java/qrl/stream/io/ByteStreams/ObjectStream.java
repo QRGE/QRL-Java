@@ -1,4 +1,4 @@
-package qrl.stream.ByteStreams;
+package qrl.stream.io.ByteStreams;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

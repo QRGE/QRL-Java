@@ -1,4 +1,4 @@
-package qrl.stream.TransformStream;
+package qrl.stream.io.TransformStream;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;

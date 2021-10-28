@@ -1,4 +1,4 @@
-package qrl.stream.TransformStream;
+package qrl.stream.io.TransformStream;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

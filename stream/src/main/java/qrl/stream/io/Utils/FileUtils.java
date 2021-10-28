@@ -1,4 +1,4 @@
-package qrl.stream.Utils;
+package qrl.stream.io.Utils;
 
 import java.io.*;
 import java.util.Objects;

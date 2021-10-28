@@ -1,4 +1,4 @@
-package qrl.stream.CharacterStreams;
+package qrl.stream.io.CharacterStreams;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

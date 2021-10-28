@@ -1,4 +1,4 @@
-package qrl.stream.ByteStreams;
+package qrl.stream.io.ByteStreams;
 
 import org.junit.Test;
 

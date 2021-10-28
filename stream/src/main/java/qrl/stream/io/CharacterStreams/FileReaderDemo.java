@@ -1,4 +1,4 @@
-package qrl.stream.CharacterStreams;
+package qrl.stream.io.CharacterStreams;
 
 import java.io.FileReader;
 import java.io.IOException;

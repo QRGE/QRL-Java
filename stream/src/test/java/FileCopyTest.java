@@ -1,5 +1,5 @@
 import org.junit.Test;
-import qrl.stream.Utils.FileUtils;
+import qrl.stream.io.Utils.FileUtils;
 
 public class FileCopyTest {
 

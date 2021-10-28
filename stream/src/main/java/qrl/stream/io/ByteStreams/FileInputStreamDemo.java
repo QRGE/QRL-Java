@@ -1,7 +1,7 @@
-package qrl.stream.ByteStreams;
+package qrl.stream.io.ByteStreams;
 
 import org.junit.Test;
-import qrl.stream.Utils.FileUtils;
+import qrl.stream.io.Utils.FileUtils;
 
 import java.io.FileInputStream;
 import java.io.IOException;

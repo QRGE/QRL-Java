@@ -1,4 +1,4 @@
-package qrl.stream.PrintWriter;
+package qrl.stream.io.PrintWriter;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
