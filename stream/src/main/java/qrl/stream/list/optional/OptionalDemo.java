@@ -2,7 +2,7 @@ package qrl.stream.list.optional;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import qr.util.mock.MockDataTool;
+import org.qrl.util.mock.MockDataTool;
 
 import java.util.List;
 import java.util.Optional;

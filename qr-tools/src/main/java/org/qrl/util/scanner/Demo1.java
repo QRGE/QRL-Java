@@ -1,4 +1,4 @@
-package qr.util.scanner;
+package org.qrl.util.scanner;
 
 import java.util.Scanner;
 

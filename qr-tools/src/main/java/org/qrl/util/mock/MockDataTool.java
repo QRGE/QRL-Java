@@ -1,4 +1,4 @@
-package qr.util.mock;
+package org.qrl.util.mock;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,4 +26,6 @@ public class MockDataTool {
         }
         return integers;
     }
+
+
 }

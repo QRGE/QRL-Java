@@ -1,4 +1,4 @@
-package qr.util.time;
+package org.qrl.util.time;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

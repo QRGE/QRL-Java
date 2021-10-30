@@ -3,7 +3,7 @@ package qrl.stream.io.ByteStreams;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import qr.util.file.FileTool;
+import org.qrl.util.file.FileTool;
 
 import java.io.*;
 

@@ -1,4 +1,4 @@
-package qr.util.file;
+package org.qrl.util.file;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package qr.util.thread;
+package org.qrl.util.thread;
 
 /**
  * @author QR

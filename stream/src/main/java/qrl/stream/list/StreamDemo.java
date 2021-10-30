@@ -1,11 +1,12 @@
 package qrl.stream.list;
 
 import org.junit.jupiter.api.Test;
-import qr.util.mock.MockDataTool;
+import org.qrl.util.mock.MockDataTool;
 import qrl.stream.list.pojo.Apple;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class StreamDemo {
@@ -56,9 +57,19 @@ public class StreamDemo {
     public void reduceTest() {
         // 求一个数字列表之和
         Integer sum = numList.stream().reduce(0, Integer::sum);
-        System.out.println(sum);
+        System.out.println("sum: " + sum);
         // 乘积
         Integer product = numList.stream().reduce(1, (a, b) -> a * b);
-        System.out.println(product);
+        System.out.println("product: " + product);
+        // 没有初始值的 reduce() 会返回一个 Optional 防止流为空的情况
+        Optional<Integer> optional = numList.stream().reduce((a, b) -> a * a + b * b);
+        Integer sumOfSquares = null;
+        if (optional.isPresent()) {
+            sumOfSquares = optional.get();
+        }
+        System.out.println("Sum of squares: " + sumOfSquares);
+        // 最小
+        Integer min = numList.stream().reduce(Integer.MAX_VALUE, Integer::min);
+        System.out.println("min: " + min);
     }
 }
