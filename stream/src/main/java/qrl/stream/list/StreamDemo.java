@@ -1,10 +1,10 @@
 package qrl.stream.list;
 
-import cn.hutool.core.collection.ListUtil;
 import org.junit.jupiter.api.Test;
+import qr.util.mock.MockDataTool;
+import qrl.stream.list.pojo.Apple;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,12 +20,7 @@ public class StreamDemo {
         appleList.add(new Apple(5, 3.0, "黑苹果"));
     }
 
-    public static final List<Integer> numList = new ArrayList<>(100);
-    static {
-        for (int i = 1; i <= 100; i++) {
-            numList.add(i);
-        }
-    }
+    public static final List<Integer> numList = MockDataTool.randomIntegerNumList(30, 666);
 
     @Test
     public void countTest() {
@@ -55,5 +50,15 @@ public class StreamDemo {
                 .filter(num -> num < 40)
                 .collect(Collectors.toList());
         newNumList.forEach(System.out::println);
+    }
+
+    @Test
+    public void reduceTest() {
+        // 求一个数字列表之和
+        Integer sum = numList.stream().reduce(0, Integer::sum);
+        System.out.println(sum);
+        // 乘积
+        Integer product = numList.stream().reduce(1, (a, b) -> a * b);
+        System.out.println(product);
     }
 }

@@ -14,12 +14,12 @@
         <module>Algorithm</module>
         <module>Annotation</module>
         <module>JUC</module>
-        <module>Utils</module>
+        <module>qr-tools</module>
         <module>office</module>
         <module>stream</module>
         <module>Exception</module>
         <module>DataStructure</module>
-        <module>ProblemSolving</module>
+        <module>problem</module>
     </modules>
 
     <properties>
@@ -30,7 +30,7 @@
         <lombok.version>1.18.20</lombok.version>
         <junit.version>5.7.0</junit.version>
         <commons.io.version>2.11.0</commons.io.version>
-        <qr.utils.version>1.3</qr.utils.version>
+        <qr.tools.version>1.3</qr.tools.version>
     </properties>
 
     <dependencyManagement>
@@ -62,8 +62,8 @@
             </dependency>
             <dependency>
                 <groupId>qr</groupId>
-                <artifactId>utils</artifactId>
-                <version>${qr.utils.version}</version>
+                <artifactId>qr-tools</artifactId>
+                <version>${qr.tools.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
