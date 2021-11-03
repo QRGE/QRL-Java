@@ -1,6 +1,6 @@
 package org.qrl.util.file;
 
-import java.util.Objects;
+import java.io.File;
 
 /**
  * File 工具类
@@ -9,12 +9,22 @@ import java.util.Objects;
  */
 public class FileTool {
 
-    public static String getResourcesFilePath(String fileName){
-        String path = Objects.requireNonNull(Thread.currentThread().getContextClassLoader().getResource("")).getPath();
-        return (path + fileName).substring(1);
+    private final static String resourcesPath = "src/main/resources";
+
+    /**
+     * 获取当前项目根路径
+     * @return 项目根路径
+     */
+    public static String getProjectPath(){
+        return System.getProperty("user.dir");
     }
 
-    public static void main(String[] args) {
-        System.out.println(getResourcesFilePath("AAA"));
+    /**
+     * 获取 resources 路径, 源码中测试用
+     * @return resource 路径
+     */
+    public static String getResourcesPath(){
+        File file = new File(resourcesPath);
+        return file.getAbsolutePath();
     }
 }

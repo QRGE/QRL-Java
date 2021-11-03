@@ -17,7 +17,7 @@ public class SplitWords {
         List<String> characters = words.stream()
                 // 借助 map 将每个 string 分解成单个字符的 string[]
                 .map(word -> word.split(""))
-                // flatMap 将多个 stream 整合成一个 stream
+                // 先用 Arrays 的 stream 方法将数据转换成字符串流, 再用 flatMap 将多个 stream 整合成一个 stream
                 // flat 扁的, java 8实战里面翻译成扁平化
                 .flatMap(Arrays::stream)
                 .collect(Collectors.toList());
