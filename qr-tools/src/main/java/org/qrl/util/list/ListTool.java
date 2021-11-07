@@ -46,7 +46,6 @@ public class ListTool {
      * @return 生成的数字列表, [start, end]
      */
     public static List<Integer> createIntNumList(Integer start, Integer end) {
-
         return IntStream.rangeClosed(start, end)
                 .boxed()
                 .collect(Collectors.toList());
