@@ -20,6 +20,7 @@
         <module>Exception</module>
         <module>DataStructure</module>
         <module>problem</module>
+        <module>tencent</module>
     </modules>
 
     <properties>
