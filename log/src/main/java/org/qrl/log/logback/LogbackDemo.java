@@ -13,6 +13,7 @@ public class LogbackDemo {
 
     public static void main(String[] args) {
         LOGGER.info("logback.info: {}", "测试info");
+        LOGGER.warn("logback.warn: {}", "");
         LOGGER.error("logback.error: {}", "测试error");
     }
 }
