@@ -21,6 +21,7 @@
         <module>DataStructure</module>
         <module>problem</module>
         <module>tencent</module>
+        <module>log</module>
     </modules>
 
     <properties>
