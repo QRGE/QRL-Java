@@ -3,9 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <version>1.3</version>
+        <groupId>org.qrl</groupId>
         <artifactId>qrl-java</artifactId>
-        <groupId>qr</groupId>
+        <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -18,9 +18,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>qr</groupId>
+            <groupId>org.qrl</groupId>
             <artifactId>dataStructure</artifactId>
-            <version>1.3</version>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
