@@ -1,4 +1,4 @@
-package qrl.stream.list.pojo;
+package org.qrl.stream.list.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

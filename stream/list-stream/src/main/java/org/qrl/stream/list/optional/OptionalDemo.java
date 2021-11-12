@@ -1,4 +1,4 @@
-package qrl.stream.list.optional;
+package org.qrl.stream.list.optional;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

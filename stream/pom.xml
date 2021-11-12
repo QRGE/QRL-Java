@@ -9,7 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>IOStream</artifactId>
+    <artifactId>stream</artifactId>
+    <packaging>pom</packaging>
+
+    <description>有关流的知识点</description>
+    <modules>
+        <module>list-stream</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -20,11 +26,6 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.qrl</groupId>
-            <artifactId>qr-tools</artifactId>
-            <version>1.0</version>
         </dependency>
     </dependencies>
 

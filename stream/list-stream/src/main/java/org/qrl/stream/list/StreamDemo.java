@@ -1,8 +1,8 @@
-package qrl.stream.list;
+package org.qrl.stream.list;
 
 import org.junit.jupiter.api.Test;
+import org.qrl.stream.list.pojo.Apple;
 import org.qrl.util.mock.MockDataTool;
-import qrl.stream.list.pojo.Apple;
 
 import java.util.ArrayList;
 import java.util.List;
