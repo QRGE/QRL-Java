@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
  * @Author QR
  * @Date 2021/11/7 9:59 PM
  */
+@SuppressWarnings("unused")
 public class NumTool {
 
     public static void main(String[] args) {

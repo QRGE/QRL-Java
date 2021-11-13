@@ -2,7 +2,7 @@ package org.qrl.stream.list;
 
 import org.junit.jupiter.api.Test;
 import org.qrl.stream.list.pojo.Apple;
-import org.qrl.util.mock.MockDataTool;
+import org.qrl.util.list.ListTool;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ public class StreamDemo {
         appleList.add(new Apple(5, 3.0, "黑苹果"));
     }
 
-    public static final List<Integer> numList = MockDataTool.randomIntegerNumList(30, 666);
+    public static final List<Integer> numList = ListTool.randomIntList(30, 666);
 
     @Test
     public void countTest() {

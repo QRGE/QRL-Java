@@ -2,7 +2,6 @@ package org.qrl.stream.list;
 
 import org.junit.jupiter.api.Test;
 import org.qrl.util.list.ListTool;
-import org.qrl.util.mock.MockDataTool;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,7 +16,7 @@ import java.util.stream.Collectors;
  */
 public class TypeStream {
 
-    private static final List<Integer> intList = MockDataTool.randomIntegerNumList(30, 200);
+    private static final List<Integer> intList = ListTool.randomIntList(30, 200);
 
     @Test
     public void intStreamDemo() {

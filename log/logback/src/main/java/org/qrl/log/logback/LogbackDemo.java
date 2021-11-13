@@ -10,12 +10,16 @@ import org.slf4j.LoggerFactory;
  */
 public class LogbackDemo {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(LogbackDemo.class);
+    private final static Logger LOG = LoggerFactory.getLogger(LogbackDemo.class);
 
     @Test
     public void helloWorld() {
-        LOGGER.info("logback.info");
-        LOGGER.warn("logback.warn");
-        LOGGER.error("logback.error");
+        LOG.info("logback.info");
+        LOG.warn("logback.warn");
+        LOG.error("logback.error");
+    }
+
+    public void lambdaStyle() {
+        
     }
 }
