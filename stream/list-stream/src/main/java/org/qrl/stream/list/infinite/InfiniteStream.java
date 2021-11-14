@@ -1,4 +1,4 @@
-package org.qrl.stream.list;
+package org.qrl.stream.list.infinite;
 
 import org.junit.jupiter.api.Test;
 

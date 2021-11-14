@@ -1,4 +1,4 @@
-package org.qrl.stream.list;
+package org.qrl.stream.list.flat;
 
 import java.util.Arrays;
 import java.util.List;

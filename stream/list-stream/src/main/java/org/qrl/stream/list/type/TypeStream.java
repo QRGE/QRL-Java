@@ -1,4 +1,4 @@
-package org.qrl.stream.list;
+package org.qrl.stream.list.type;
 
 import org.junit.jupiter.api.Test;
 import org.qrl.tools.util.list.ListTool;
