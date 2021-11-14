@@ -1,7 +1,7 @@
 package org.qrl.stream.list.statistic;
 
 import org.junit.jupiter.api.Test;
-import org.qrl.util.list.ListTool;
+import org.qrl.tools.util.list.ListTool;
 
 import java.util.IntSummaryStatistics;
 import java.util.List;

@@ -2,7 +2,7 @@ package org.qrl.stream.list.optional;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.qrl.util.list.ListTool;
+import org.qrl.tools.util.list.ListTool;
 
 import java.util.List;
 import java.util.Optional;

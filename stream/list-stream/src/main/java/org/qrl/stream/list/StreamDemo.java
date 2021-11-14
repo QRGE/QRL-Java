@@ -1,8 +1,8 @@
 package org.qrl.stream.list;
 
 import org.junit.jupiter.api.Test;
-import org.qrl.stream.list.pojo.Apple;
-import org.qrl.util.list.ListTool;
+import org.qrl.stream.list.entity.Apple;
+import org.qrl.tools.util.list.ListTool;
 
 import java.util.ArrayList;
 import java.util.List;

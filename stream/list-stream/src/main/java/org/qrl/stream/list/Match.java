@@ -9,7 +9,7 @@ import java.util.Optional;
 
 /**
  * xxMatch() 也是终端操作, 会返回一个非流结果
- * xxMatch() 和 limit() 都是短路操作: 并不需要
+ * xxMatch() 和 limit() 都是短路操作: 并不需要完整遍历流
  * @Author QR
  * @Date 2021/10/29 12:00 AM
  */

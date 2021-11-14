@@ -1,7 +1,7 @@
 package qrl.stream.file;
 
 import org.junit.jupiter.api.Test;
-import org.qrl.util.file.FileTool;
+import org.qrl.tools.util.file.FileTool;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
