@@ -38,7 +38,7 @@ public class TypeStream {
     @Test
     public void rangeClosed() {
         // 借助 IntStream 生成的连续数列
-        List<Integer> numList = ListTool.createIntNumList(100, -100);
+        List<Integer> numList = ListTool.integerList(100, -100);
         numList.forEach(System.out::println);
     }
 }

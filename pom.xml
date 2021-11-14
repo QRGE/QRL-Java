@@ -27,8 +27,9 @@
     </modules>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <!--学学最新的!-->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <mysql.version>8.0.19</mysql.version>
         <hutool.version>5.7.9</hutool.version>
         <lombok.version>1.18.20</lombok.version>
