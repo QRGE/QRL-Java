@@ -1,4 +1,4 @@
-package org.qrl.basic.instanceOf;
+package org.qrl.basic.inherit;
 
 import org.qrl.basic.entity.Person;
 import org.qrl.basic.entity.Student;

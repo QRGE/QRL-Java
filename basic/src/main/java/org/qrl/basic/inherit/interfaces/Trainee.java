@@ -1,4 +1,4 @@
-package org.qrl.basic.inherit.Interface;
+package org.qrl.basic.inherit.interfaces;
 
 /**
  * 如果两个类都有相同的默认方法, 你需要重写, 可以通过 Interface.function() 的形式去调用某个接口的默认方法

@@ -1,4 +1,4 @@
-package org.qrl.basic.Copy;
+package org.qrl.basic.copy;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

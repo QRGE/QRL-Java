@@ -1,4 +1,4 @@
-package org.qrl.basic.inherit.Interface;
+package org.qrl.basic.inherit.interfaces;
 
 public interface Hunter {
 
