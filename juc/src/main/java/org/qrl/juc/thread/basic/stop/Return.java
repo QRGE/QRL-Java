@@ -7,14 +7,17 @@ public class Return {
             int i = 0;
             while (true) {
                 if (Thread.currentThread().isInterrupted()) {
+                    // 可以通过 return 的形式结束当前线程
                     return;
                 }
                 System.out.println(i++);
             }
         }, "thread7_2");
         thread7_2.start();
-        Thread.sleep(200); // 让子弹飞一会
+        // 让子弹飞一会
+        Thread.sleep(20);
 
+        // 20ms 计算机就能进行 10000 次左右的 print
         thread7_2.interrupt();
         System.out.println("Stop!");
     }
