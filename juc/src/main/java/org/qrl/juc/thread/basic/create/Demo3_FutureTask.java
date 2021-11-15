@@ -1,4 +1,4 @@
-package org.qrl.juc.thread.basic.CreateThread;
+package org.qrl.juc.thread.basic.create;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;

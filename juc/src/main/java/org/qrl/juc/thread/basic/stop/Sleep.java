@@ -1,4 +1,4 @@
-package org.qrl.juc.thread.basic.Stop;
+package org.qrl.juc.thread.basic.stop;
 
 /**
  * 停止线程的方法:

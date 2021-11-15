@@ -14,11 +14,11 @@
         <module>JVM</module>
         <module>Algorithm</module>
         <module>Annotation</module>
-        <module>JUC</module>
+        <module>juc</module>
         <module>qr-tools</module>
         <module>office</module>
         <module>stream</module>
-        <module>Exception</module>
+        <module>exception</module>
         <module>DataStructure</module>
         <module>problem</module>
         <module>tencent</module>
