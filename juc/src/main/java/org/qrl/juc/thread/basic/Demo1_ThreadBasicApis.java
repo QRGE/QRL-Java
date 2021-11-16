@@ -1,38 +1,18 @@
 package org.qrl.juc.thread.basic;
 
-public class ThreadTests {
+public class Demo1_ThreadBasicApis {
 
-    // Thread.sleep()可以暂停调用此方法的线程, 测试类里似乎不能使用Thread.sleep(), 可以看MyThread的main方法
-    void sleepTest(){
-        MyThread7 myThread7 = new MyThread7();
-        long startTime = System.currentTimeMillis();
-        myThread7.start();
-        long endTime = System.currentTimeMillis();
-        System.out.println("Main, pass: " + (endTime - startTime));
-    }
+
 
     // 每一个线程都已自己的唯一Id
     // 通过getId()可以获取线程的Id
     void getIdTest(){
-        System.out.println("ThreadName: " + Thread.currentThread().getName() + ", id: " + Thread.currentThread().getId());
-        for (int i = 0; i < 5; i++) {
-            new MyThread8().start();
-        }
+
     }
 
     // Thread.yield()方法可以让当前线程放弃CPU资源
     void yieldTest(){
-        MyThread9 myThread9 = new MyThread9();
-        myThread9.start();
 
-        long begin = System.currentTimeMillis();
-        long sum = 0L;
-        for (int i = 0; i < 100000; i++) {
-            sum += i;
-            Thread.yield();
-        }
-        long end = System.currentTimeMillis();
-        System.out.println("Main Pass: " + (end - begin));
     }
 
     // setProperty()方法可以设置线程的优先级, 优先级的取值范围为0到10依次递增

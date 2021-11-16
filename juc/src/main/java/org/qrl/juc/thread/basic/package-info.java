@@ -1,15 +1,8 @@
-package org.qrl.juc.thread.basic;
-
 /**
- * 多线程可以让你最大限度地利用CPU
- *
- * 创建一个线程类的方式:
- *      继承Thread类
- *      实现Runnable接口, 并作为Thread的构造方法的参数传入
- *
- * 由于Java时单继承, 利用实现Runnable接口的方法创造线程类可以实现更多功能
- *
- * 各个线程的启动顺序 和 代码顺序 可能并没有关系
+ * <p>
+ *     进程：系统进行资源分配和调度的一个独立单元/程序在一个数据集合上的运行过程<br/>
+ *     多线程可以让你最大限度地利用CPU
+ * </p>
  *
  * 线程的状态:
  * 线程在一定条件下，状态会发生变化。线程一共有以下几种状态：
@@ -28,5 +21,4 @@ package org.qrl.juc.thread.basic;
  *              当sleep()状态超时、join()等待线程终止或者超时，或者I/O处理完毕时，线程重新转入Runnable状态。
  *      Dead: 线程执行完了或者因异常退出了run()方法，该线程结束生命周期。
  */
-public class Concept {
-}
+package org.qrl.juc.thread.basic;
