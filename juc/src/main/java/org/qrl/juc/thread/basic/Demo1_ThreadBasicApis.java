@@ -1,5 +1,7 @@
 package org.qrl.juc.thread.basic;
 
+import org.junit.jupiter.api.Test;
+
 public class Demo1_ThreadBasicApis {
 
 
@@ -17,21 +19,24 @@ public class Demo1_ThreadBasicApis {
 
     // setProperty()方法可以设置线程的优先级, 优先级的取值范围为0到10依次递增
     // main线程的优先级为5, 优先级是可以继承的, 即如果在A线程中创建了B线程, 那么B线程的优先级等同于A线程的优先级, 也就是说所有在main线程中创建的线程的优先级均为5
-    void priorityTest(){
+    // 可以在源码中看到, 设置的优先级不能超过当前线程组的优先级
+    // 其实并不能体会到优先级带来的差异有多巨大
+    @Test
+    public void priorityTest(){
         Thread threadA = new Thread(() -> {
             for (int i = 0; i < 100; i++) {
-                System.out.println("Thread B is working! " + i);
+                System.out.println("Thread: " + Thread.currentThread().getName() + " is working! " + i);
             }
-        });
+        }, "A");
         threadA.setPriority(1);
-        threadA.start();
-
         Thread threadB = new Thread(() -> {
             for (int i = 0; i < 100; i++) {
-                System.out.println("Thread A is working! " + i);
+                System.out.println("Thread: " + Thread.currentThread().getName() + " is working! " + i);
             }
-        });
+        }, "B");
         threadB.setPriority(10);
+
+        threadA.start();
         threadB.start();
     }
 
