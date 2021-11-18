@@ -1,7 +1,6 @@
 package qr.data.structure.tree;
 
 import org.junit.Test;
-import qr.basic.util.console.ConsoleUtils;
 import qr.data.structure.tree.printer.BinaryTrees;
 
 /**
@@ -32,12 +31,10 @@ public class RedBlackTreeTests {
             rbTree.add(num);
         }
         BinaryTrees.println(rbTree);
-        ConsoleUtils.separater();
         for (Integer num : nums) {
             System.out.println("remove: " + num);
             rbTree.remove(num);
             BinaryTrees.println(rbTree);
-            ConsoleUtils.separater();
         }
     }
 }
