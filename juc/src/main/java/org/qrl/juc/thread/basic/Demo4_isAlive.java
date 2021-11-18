@@ -1,5 +1,7 @@
 package org.qrl.juc.thread.basic;
 
+import org.qrl.tools.util.thread.ThreadTool;
+
 /**
  * boolean isAlive(): 判断当前线程是否活跃
  */
@@ -12,11 +14,11 @@ public class Demo4_isAlive {
         }
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         MyThread myThread = new MyThread();
         System.out.println("begin: " + myThread.isAlive());
         myThread.start(); // 开启线程后执行run方法, run方法中的this.isAlive() -> true
-        Thread.sleep(2000);
+        ThreadTool.sleepMillisecond(200);
         System.out.println("end: " + myThread.isAlive()); // 线程方法执行完毕, 线程关闭, myThread.isAlive() - > true
     }
 }

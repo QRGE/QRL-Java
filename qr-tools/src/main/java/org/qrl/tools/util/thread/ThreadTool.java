@@ -2,11 +2,20 @@ package org.qrl.tools.util.thread;
 
 import java.util.StringJoiner;
 
+@SuppressWarnings("unused")
 public class ThreadTool {
-
-    public static void sleepMillis(long millis){
+    
+    public static void sleepSecond(long second){
         try {
-            Thread.sleep(millis);
+            Thread.sleep(second * 1000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void sleepMillisecond(long millisecond){
+        try {
+            Thread.sleep(millisecond);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

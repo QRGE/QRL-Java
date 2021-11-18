@@ -1,57 +1,42 @@
 package org.qrl.juc.thread.basic;
 
-public class ThreadTests {
+import org.junit.jupiter.api.Test;
 
-    // Thread.sleep()可以暂停调用此方法的线程, 测试类里似乎不能使用Thread.sleep(), 可以看MyThread的main方法
-    void sleepTest(){
-        MyThread7 myThread7 = new MyThread7();
-        long startTime = System.currentTimeMillis();
-        myThread7.start();
-        long endTime = System.currentTimeMillis();
-        System.out.println("Main, pass: " + (endTime - startTime));
-    }
+public class Demo1_ThreadBasicApis {
+
+
 
     // 每一个线程都已自己的唯一Id
     // 通过getId()可以获取线程的Id
     void getIdTest(){
-        System.out.println("ThreadName: " + Thread.currentThread().getName() + ", id: " + Thread.currentThread().getId());
-        for (int i = 0; i < 5; i++) {
-            new MyThread8().start();
-        }
+
     }
 
     // Thread.yield()方法可以让当前线程放弃CPU资源
     void yieldTest(){
-        MyThread9 myThread9 = new MyThread9();
-        myThread9.start();
 
-        long begin = System.currentTimeMillis();
-        long sum = 0L;
-        for (int i = 0; i < 100000; i++) {
-            sum += i;
-            Thread.yield();
-        }
-        long end = System.currentTimeMillis();
-        System.out.println("Main Pass: " + (end - begin));
     }
 
     // setProperty()方法可以设置线程的优先级, 优先级的取值范围为0到10依次递增
     // main线程的优先级为5, 优先级是可以继承的, 即如果在A线程中创建了B线程, 那么B线程的优先级等同于A线程的优先级, 也就是说所有在main线程中创建的线程的优先级均为5
-    void priorityTest(){
+    // 可以在源码中看到, 设置的优先级不能超过当前线程组的优先级
+    // 其实并不能体会到优先级带来的差异有多巨大
+    @Test
+    public void priorityTest(){
         Thread threadA = new Thread(() -> {
             for (int i = 0; i < 100; i++) {
-                System.out.println("Thread B is working! " + i);
+                System.out.println("Thread: " + Thread.currentThread().getName() + " is working! " + i);
             }
-        });
+        }, "A");
         threadA.setPriority(1);
-        threadA.start();
-
         Thread threadB = new Thread(() -> {
             for (int i = 0; i < 100; i++) {
-                System.out.println("Thread A is working! " + i);
+                System.out.println("Thread: " + Thread.currentThread().getName() + " is working! " + i);
             }
-        });
+        }, "B");
         threadB.setPriority(10);
+
+        threadA.start();
         threadB.start();
     }
 
