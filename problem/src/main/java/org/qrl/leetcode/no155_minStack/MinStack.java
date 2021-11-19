@@ -7,7 +7,13 @@ import java.util.*;
  */
 class MinStack {
 
+    /**
+     * 用于存储最所有的数据
+     */
     private final Stack<Integer> stack;
+    /**
+     * 每次传入时只存储 当前栈数据+新增数据 中的最小值
+     */
     private final Stack<Integer> stackMin;
 
     public MinStack() {
