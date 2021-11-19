@@ -36,6 +36,8 @@
         <junit.version>5.7.0</junit.version>
         <commons.io.version>2.11.0</commons.io.version>
         <qr.tools.version>1.0</qr.tools.version>
+        <qr.exception.version>1.0</qr.exception.version>
+        <mockito.version>4.0.0</mockito.version>
     </properties>
 
     <dependencyManagement>
@@ -70,6 +72,16 @@
                 <artifactId>qr-tools</artifactId>
                 <version>${qr.tools.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.qrl</groupId>
+                <artifactId>qr-exception</artifactId>
+                <version>${qr.exception.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -91,8 +103,9 @@
             <artifactId>junit-jupiter-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.qrl</groupId>
-            <artifactId>qr-tools</artifactId>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
