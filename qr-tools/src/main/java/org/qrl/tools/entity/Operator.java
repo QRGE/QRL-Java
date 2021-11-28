@@ -13,6 +13,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Operator {
 
+    /**
+     * id
+     */
     private String number;
 
     private String codeName;
