@@ -36,6 +36,7 @@
         <junit.version>5.7.0</junit.version>
         <commons.io.version>2.11.0</commons.io.version>
         <qr.tools.version>1.0</qr.tools.version>
+        <qr.log.version>1.0</qr.log.version>
         <qr.exception.version>1.0</qr.exception.version>
         <mockito.version>4.0.0</mockito.version>
     </properties>
@@ -46,6 +47,11 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.13</version>
+            </dependency>
+            <dependency>
+                <groupId>org.qrl</groupId>
+                <artifactId>log</artifactId>
+                <version>${qr.log.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
@@ -89,6 +95,18 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+        </dependency>
+         <!--自己不能导入自己-->
+        <dependency>
+            <groupId>org.qrl</groupId>
+            <artifactId>log</artifactId>
+            <version>1.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.qrl</groupId>
+                    <artifactId>log</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
