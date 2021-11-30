@@ -98,8 +98,8 @@
         </dependency>
          <!--自己不能导入自己-->
         <dependency>
-            <groupId>org.qrl</groupId>
-            <artifactId>log</artifactId>
+            <groupId>org.qrl.log</groupId>
+            <artifactId>logback</artifactId>
             <version>1.0</version>
             <exclusions>
                 <exclusion>
