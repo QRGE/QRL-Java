@@ -12,6 +12,13 @@
     <groupId>org.qrl.stream</groupId>
     <artifactId>list-stream</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.qrl</groupId>
+            <artifactId>qr-tools</artifactId>
+        </dependency>
+    </dependencies>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>

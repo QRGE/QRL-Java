@@ -48,6 +48,16 @@ public class CollectorsDemo {
     }
 
     /**
+     * 通过 groupingBy() 获得一个 id : name 的映射
+     */
+    @Test
+    public void idToName() {
+        Map<String, String> idToName = OPERATOR_LIST.stream()
+                .collect(groupingBy(Operator::getNumber, mapping(Operator::getCodeName, joining())));
+        idToName.forEach((k, v) -> System.out.println(k + " : " + v));
+    }
+
+    /**
      * Collectors.mapping() 可以将分组的 list 进行类似 map() 的操作
      */
     @Test

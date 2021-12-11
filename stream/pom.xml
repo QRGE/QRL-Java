@@ -15,6 +15,7 @@
     <description>有关流的知识点</description>
     <modules>
         <module>list-stream</module>
+        <module>io-stream</module>
     </modules>
 
     <properties>
