@@ -1,5 +1,5 @@
 .idea
 
-.class
-
+# 编译后的东西不用提交
+*.class
 target
