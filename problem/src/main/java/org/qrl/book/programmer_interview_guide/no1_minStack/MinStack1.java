@@ -1,4 +1,4 @@
-package org.qrl.book.the_interView_guide.no1_getMinStack;
+package org.qrl.book.programmer_interview_guide.no1_minStack;
 
 import org.qrl.exception.QRException;
 import java.util.Stack;

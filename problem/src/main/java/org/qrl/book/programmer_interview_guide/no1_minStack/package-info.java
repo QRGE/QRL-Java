@@ -5,4 +5,4 @@
  * 1.pop、push、getMin操作的时间复杂度都是O（1）。
  * 2.设计的栈类型可以使用现成的栈结构。
  */
-package org.qrl.book.the_interView_guide.no1_getMinStack;
+package org.qrl.book.programmer_interview_guide.no1_minStack;
