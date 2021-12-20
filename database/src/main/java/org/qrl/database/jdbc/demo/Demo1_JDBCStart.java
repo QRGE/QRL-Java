@@ -1,8 +1,10 @@
-package org.qrl.database.jdbc;
+package org.qrl.database.jdbc.demo;
 
 import cn.hutool.core.io.IoUtil;
+import org.qrl.database.util.ResourceUtil;
 
 import java.sql.*;
+import java.util.Properties;
 
 /**
  * jdbc java-database-connectivity java官方提供连接数据库的一套标准
@@ -13,18 +15,18 @@ import java.sql.*;
  */
 public class Demo1_JDBCStart {
 
-    static final String driver = "com.mysql.cj.jdbc.Driver";
-
-    static final String url = "jdbc:mysql://localhost/mybatis-learn?serverTimezone=Asia/Shanghai";
-
-    static final String user = "root";
-
-    static final String password = "QRWUDI666";
-
     public static void main(String[] args) {
+        // 配置文件内容读取
+        Properties properties = ResourceUtil.getResourceFile("database.properties");
+        String driver = properties.getProperty("driver", "com.mysql.cj.jdbc.Driver");
+        String url = properties.getProperty("url");
+        String user = properties.getProperty("user");
+        String password = properties.getProperty("password");
+        // 基础 demo
         ResultSet resultSet = null;
         Statement statement = null;
         Connection conn = null;
+        new Properties();
         try {
             // 注册驱动, 动态加载驱动程序的类文件到内存中
             Class.forName(driver);
