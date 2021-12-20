@@ -7,6 +7,7 @@ import java.sql.*;
 /**
  * jdbc java-database-connectivity java官方提供连接数据库的一套标准
  * mysql-connector-java 是 mysql 官方对 jdbc 的实现
+ * - 第三方供应商在他们的数据库驱动程序中都实现了 java.sql.Driver
  * @author qr
  * @date 2021/12/20 13:46
  */
@@ -25,14 +26,14 @@ public class Demo1_JDBCStart {
         Statement statement = null;
         Connection conn = null;
         try {
-            // 注册驱动
+            // 注册驱动, 动态加载驱动程序的类文件到内存中
             Class.forName(driver);
             // 获取连接
             conn = DriverManager.getConnection(url, user, password);
             // 获取sql执行对象: statement
             statement =  conn.createStatement();
             // 需要执行的 sql 语句
-            String sql = "select * from t_user where data_id = 1 or 1=1"; // sql 注入😏
+            String sql = "select * from t_user where data_id = 1 or 1=1"; // 😏
             // 执行sql语句,返回一个结果集: resultSet
             resultSet =  statement.executeQuery(sql);
             // 处理结果集
