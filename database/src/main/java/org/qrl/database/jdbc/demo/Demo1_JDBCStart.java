@@ -26,7 +26,6 @@ public class Demo1_JDBCStart {
         ResultSet resultSet = null;
         Statement statement = null;
         Connection conn = null;
-        new Properties();
         try {
             // 注册驱动, 动态加载驱动程序的类文件到内存中
             Class.forName(driver);
