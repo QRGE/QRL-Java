@@ -25,6 +25,7 @@
         <module>log</module>
         <module>test</module>
         <module>database</module>
+        <module>xml</module>
     </modules>
 
     <properties>
