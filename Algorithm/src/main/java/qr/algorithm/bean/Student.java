@@ -1,4 +1,4 @@
-package qr.algorithm.domian;
+package qr.algorithm.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,8 +14,12 @@ public class Student implements Comparable<Student>{
     private int score;
     private int age;
 
-    private String name = "[ { \"endtime\": \"23:59\", \"isSend\": 1, \"subType\": 1, \"starttime\": \"07:00\", \"recordType\": 1 }, { \"endtime\": \"23:59\", \"isSend\": 1, \"subType\": 0, \"starttime\": \"07:00\", \"recordType\": 6 } ]";
+    private String name;
 
+    public Student(int score, int age) {
+        this.score = score;
+        this.age = age;
+    }
 
     @Override
     public int compareTo(Student s) {

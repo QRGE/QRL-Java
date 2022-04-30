@@ -1,7 +1,7 @@
 package qr.algorithm.sort;
 
 import org.jetbrains.annotations.NotNull;
-import qr.algorithm.domian.Student;
+import qr.algorithm.bean.Student;
 
 import java.text.DecimalFormat;
 

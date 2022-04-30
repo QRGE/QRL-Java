@@ -21,6 +21,9 @@ public class BubbleSort<T extends Comparable<T>> extends Sort<T>{
         }
     }
 
+    /**
+     * 优化1，可以提前跳出遍历
+     */
     public void sort2(int[] nums){
         if (nums == null || nums.length < ARRAY_LIMIT){
             return;
@@ -34,12 +37,16 @@ public class BubbleSort<T extends Comparable<T>> extends Sort<T>{
                     sorted = false;
                 }
             }
+            // 某一次冒泡后已经排序好了，就不用继续遍历了
             if (sorted) {
                 break;
             }
         }
     }
 
+    /**
+     * 优化2：记录需要冒泡排序的序列
+     */
     public void sort3(int[] nums){
         if (nums == null || nums.length < ARRAY_LIMIT){
             return;
@@ -54,6 +61,7 @@ public class BubbleSort<T extends Comparable<T>> extends Sort<T>{
                     sortedIndex = begin;
                 }
             }
+            // 0～sortedIndex 部分的列表才需要排序
             end = sortedIndex;
         }
     }
