@@ -1,5 +1,7 @@
 package qr.algorithm.sort;
 
+import java.util.Arrays;
+
 /**
  * 以升序排序为例，快速排序以某个数为基准，将排序的数组分成基准数 a，左序列 arr1，右序列 arr2，其中 arr1 都比 a 小，arr2 都比 a 大，
  * 再分别对 arr1 和 arr2 重复这个过程
@@ -11,20 +13,26 @@ package qr.algorithm.sort;
 @SuppressWarnings("unused")
 public class QuickSort<T extends Comparable<T>> extends Sort<T>{
 
+    public static void main(String[] args) {
+        Integer[] nums = {7, 4, 5, 8, 1, 3, 11, 15};
+        new QuickSort<Integer>().sort(nums);
+        System.out.println(Arrays.toString(nums));
+    }
+
     @Override
     protected void sort() {
-        int begin = 0, end = array.length;
+        int begin = 0, end = array.length-1;
         sort(array, begin, end);
     }
 
     private void sort(T[] array, int begin, int end) {
-        if (begin <= end) return;
+        if (begin >= end) return;
         // 将 array 分成两个自组，左子序 arr1，右子序 arr2
         int standard = partition(array, begin, end);
         // 让 arr1 有序
-        sort(array, begin, --standard);
+        sort(array, begin, standard - 1);
         // 让 arr2 有序
-        sort(array, ++standard, end);
+        sort(array, standard + 1, end);
     }
 
     private int partition(T[] array, int begin, int end) {
@@ -32,11 +40,11 @@ public class QuickSort<T extends Comparable<T>> extends Sort<T>{
         int left = begin;
         int right = end + 1;
         while (true) {
-            // 找到第一个比 boundary 小的数
-            while (cmp(boundary, array[--right]) > 0)
+            // 从右往左找到第一个比 boundary 小的数
+            while (cmp(array[--right], boundary) >= 0)
                 if (right == begin) break;
             // 从左往右找到第一个比 boundary 大的数
-            while (cmp(boundary, array[++left]) < 0)
+            while (cmp(array[++left], boundary) <= 0)
                 if (left == end) break;
             if (left >= right) {
                 break;
@@ -44,7 +52,7 @@ public class QuickSort<T extends Comparable<T>> extends Sort<T>{
                 swap(left, right);
             }
         }
-        swap(begin, left);
-        return left;
+        swap(begin, right);
+        return right;
     }
 }
