@@ -1,6 +1,6 @@
 package org.qrl.book.programmer_interview_guide.no1_minStack;
 
-import org.qrl.exception.QRException;
+import org.qrl.exception.QRRuntimeException;
 import java.util.Stack;
 
 import java.util.Optional;
@@ -24,7 +24,7 @@ public class MinStack1 {
     public Integer pop() {
         Integer popNum = stack.pop();
         if (popNum == null) {
-            throw new QRException("栈为空");
+            throw new QRRuntimeException("栈为空");
         }
         if (popNum.equals(minStack.peek())){
             minStack.pop();

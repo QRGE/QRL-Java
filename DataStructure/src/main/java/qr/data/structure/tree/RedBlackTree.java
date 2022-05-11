@@ -37,15 +37,15 @@ public class RedBlackTree<E> extends BalanceBinarySearchTree<E>{
         }
 
         /**
-         * 方便打印出凸显红色
-         * @return 凸显红色后的显示字符串
+         * 打印时凸显节点的颜色
          */
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            if (color == RED) {
-                sb.append("R_");
-            }
+            if (color == RED)
+                sb.append("RED_");
+            else
+                sb.append("BLACK_");
             return sb + element.toString();
         }
     }

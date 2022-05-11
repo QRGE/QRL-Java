@@ -18,7 +18,7 @@
         <module>qr-tools</module>
         <module>office</module>
         <module>stream</module>
-        <module>exception</module>
+        <module>Exception</module>
         <module>DataStructure</module>
         <module>problem</module>
         <module>tencent</module>

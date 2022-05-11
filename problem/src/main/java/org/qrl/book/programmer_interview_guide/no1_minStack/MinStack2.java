@@ -1,6 +1,6 @@
 package org.qrl.book.programmer_interview_guide.no1_minStack;
 
-import org.qrl.exception.QRException;
+import org.qrl.exception.QRRuntimeException;
 
 import java.util.Stack;
 
@@ -16,7 +16,7 @@ public class MinStack2 {
 
     public Integer pop(){
         if (stack.isEmpty()){
-            throw new QRException("栈为空");
+            throw new QRRuntimeException("栈为空");
         }
         stackMin.pop();
         return stack.pop();
@@ -40,7 +40,7 @@ public class MinStack2 {
 
     public Integer getMin() {
         if (stackMin.isEmpty()) {
-            throw new QRException("栈为空");
+            throw new QRRuntimeException("栈为空");
         }
         return stackMin.pop();
     }

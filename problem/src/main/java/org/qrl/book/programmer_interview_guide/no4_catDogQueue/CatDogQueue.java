@@ -1,9 +1,7 @@
 package org.qrl.book.programmer_interview_guide.no4_catDogQueue;
 
-import org.qrl.book.programmer_interview_guide.no4_catDogQueue.entity.Cat;
-import org.qrl.book.programmer_interview_guide.no4_catDogQueue.entity.Dog;
 import org.qrl.book.programmer_interview_guide.no4_catDogQueue.entity.Pet;
-import org.qrl.exception.QRException;
+import org.qrl.exception.QRRuntimeException;
 import qr.data.structure.list.LinkedList.QRLinkedList;
 
 import java.util.Objects;
@@ -37,14 +35,14 @@ public class CatDogQueue {
 
     public Pet pullCat() {
         if (catQueue.isEmpty()) {
-            throw new QRException("catQueue is Empty");
+            throw new QRRuntimeException("catQueue is Empty");
         }
         return catQueue.poll().getPet();
     }
 
     public Pet pullDog() {
         if (dogQueue.isEmpty()) {
-            throw new QRException("dogQueue is Empty");
+            throw new QRRuntimeException("dogQueue is Empty");
         }
         return dogQueue.poll().getPet();
     }
@@ -67,7 +65,7 @@ public class CatDogQueue {
         }else if (catQueue.isNotEmpty()) {
             return Objects.requireNonNull(catQueue.poll()).getPet();
         }else {
-            throw new QRException("catQueue and dogQueue are both empty!");
+            throw new QRRuntimeException("catQueue and dogQueue are both empty!");
         }
     }
 
