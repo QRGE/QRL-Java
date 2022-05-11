@@ -81,7 +81,7 @@ public class ArrayList<E> extends AbstractList<E> {
     @Override
     public void add(int index, E element) {
         rangeCheckForAdd(index);
-        ensureCapacity(size+1);
+        grow(size+1);
         if (index != size) {
             System.arraycopy(elements, index, elements, index + 1, size - index);
         }
@@ -192,12 +192,13 @@ public class ArrayList<E> extends AbstractList<E> {
         return stringBuilder.toString();
     }
 
-    private void ensureCapacity(int capacity){
+    private void grow(int capacity){
         // 数组的容量
         int oldCapacity = elements.length;
         if (oldCapacity >= capacity) {
             return;
         }
+        // 1.5 倍扩容
         int newCapacity = oldCapacity + (oldCapacity >> 1);
         E[] newElements = (E[]) new Object[newCapacity];
         System.arraycopy(elements, 0, newElements, 0, size);
